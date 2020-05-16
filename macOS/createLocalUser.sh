@@ -21,3 +21,6 @@ sudo cp -a /System/Library/User\ Template/Japanese.lproj /Users/$TARGETUSER
 chown -R $TARGETUSER\:staff /Users/$TARGETUSER
 chmod 701 /Users/$TARGETUSER
 sudo dscl . -passwd /Users/$TARGETUSER $PASSWORD
+
+# このユーザに管理者権限を与える
+sudo dscl . -append /Groups/admin GroupMembership $TARGETUSER
